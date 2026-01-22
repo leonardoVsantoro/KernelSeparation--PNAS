@@ -95,13 +95,17 @@ def res_plot(df):
     ax_right.legend()
     ax_right.grid(True, alpha=0.3)
     ax_right.legend_.remove()
-
     handles, labels = axes[0].get_legend_handles_labels()
+    label_map = {"MMD": "MMD", "KLR": r"$D_{KL}$"}
+    labels = [label_map.get(l, l) for l in labels]
     axes[-1].legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.4), ncol=2)
-    
+
     handles, labels = ax_right.get_legend_handles_labels()
-    new_handles = [plt.Line2D([0], [0], color='k', linestyle=linestyles[label], linewidth=1.5) 
-                    for label in labels]
+    labels = [label_map.get(l, l) for l in labels]
+    new_handles = [
+        plt.Line2D([0], [0], color='k', linestyle=linestyles.get(orig, '-'), linewidth=1.5)
+        for orig in ax_right.get_legend_handles_labels()[1]
+    ]
     ax_right.legend(new_handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.17), ncol=2)
     plt.show()
     return fig
