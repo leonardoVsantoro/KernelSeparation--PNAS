@@ -1,4 +1,4 @@
-from utils import *
+ from utils import *
 
 model = AR1_model(alpha = .5, eps = .25) (d = 50); 
 # AR1 (decreasing correlation) model for two-sample testing:

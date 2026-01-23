@@ -96,7 +96,7 @@ def res_plot(df):
     ax_right.grid(True, alpha=0.3)
     ax_right.legend_.remove()
     handles, labels = axes[0].get_legend_handles_labels()
-    label_map = {"MMD": "MMD", "KLR": r"$D_{KL}$"}
+    label_map = {"MMD": "MMD", "KLR": r"$\mathrm{D}_{\mathrm{KL}}$"}
     labels = [label_map.get(l, l) for l in labels]
     axes[-1].legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, -0.4), ncol=2)
 
