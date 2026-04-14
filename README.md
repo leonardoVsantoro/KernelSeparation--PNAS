@@ -19,7 +19,7 @@ fig/                    # Output directory for saved figures
 
 ## Usage
 
-From the `code/` directory:
+From the code directory:
 
 ```bash
 # Reproduce all figures
